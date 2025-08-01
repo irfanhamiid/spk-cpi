@@ -1,0 +1,75 @@
+<h1 class="h3 mb-0 text-gray-800">Subkriteria <?= $kriteria->nama_kriteria ?></h1>
+<?php if($this->session->flashdata('pesan')){ ?>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong><?= $this->session->flashdata('pesan') ?></strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<?php } ?>
+<div class="card shadow mb-4 mt-2">
+    <div class="card-header py-3">
+        <a href="<?= base_url('admin/tambah_subkriteria/'.$kriteria->id) ?>" class="btn btn-primary btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-plus"></i>
+            </span>
+            <span class="text">Data</span>
+        </a>
+        <a href="<?= base_url('admin/hitung_nilai/'.$kriteria->id) ?>" class="btn btn-success">Update Nilai</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">No</th>
+                        <th>Nama Subkriteria</th>
+                        <th>Prioritas</th>
+                        <th>Nilai</th>
+                        <th>Opsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $no=1;foreach($subkriteria as $data){ ?>
+                    <tr>
+                        <td><?= $no++ ?></td>
+                        <td><?= $data->nama_sub ?></td>
+                        <td><?= $data->prioritas ?></td>
+                        <td><?= $data->nilai ?></td>
+                        <td>
+                            <a href="<?= base_url('admin/edit_subkriteria/' . $data->id) ?>" class="btn btn-primary"><i
+                                    class="fas fa-pencil-alt" title="Edit"></i></a>
+                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                data-target="#exampleModal<?= $data->id ?>">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                            <div class="modal fade" id="exampleModal<?= $data->id ?>" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Hapus <?= $title ?> ?</h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+										Pilih "Hapus" untuk menghapus <?= $title ?>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Batal</button>
+											<a href="<?= base_url('admin/hapus_subkriteria/'.$data->id.'/'.$data->id_kriteria) ?>" class="btn btn-primary">Hapus</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
