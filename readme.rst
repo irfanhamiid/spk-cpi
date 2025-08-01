@@ -17,8 +17,14 @@ Teknologi yang digunakan
 Hak Akses
 *******************
 1. Admin
+ - username : admin
+ - password : admin
 2. Ahli Pakar
+ - username : ahli
+ - password : ahli
 3. Pengguna
+ - username : user
+ - password : user
 
 *******************
 Fitur
