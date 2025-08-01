@@ -1,70 +1,37 @@
 ###################
-What is CodeIgniter
+Sistem Pendukung Keputusan
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Sistem Pendukung Keputusan (SPK) berbasis website untuk menentukan Produk Sunscreen berdasarkan jenis kulit menggunakan metode Composite Performance Index (CPI).
 
 *******************
-Release Information
+Teknologi yang digunakan
 *******************
-
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
-
-**************************
-Changelog and New Features
-**************************
-
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+1. CodeIgniter 3
+2. PHP 7.4.33
+3. MySQL
+4. Boostrap 4
+5. SB Admin 2
 
 *******************
-Server Requirements
+Hak Akses
 *******************
+1. Admin
+2. Ahli Pakar
+3. Pengguna
 
-PHP version 5.6 or newer is recommended.
+*******************
+Fitur
+*******************
+1. Admin
+ - Menambah, Menghapus, Mengubah data Kriteria termasuk Subkriteria dan memperbarui Bobot Kriteria.
+ - Menambah, Menghapus, Mengubah data Alternatif.
+ - Menambah, Menghapus, Mengubah penilaian Alternatif.
+ - Melihat hasil normalisasi Alternatif.
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+2. Ahli Pakar
+ - Mengubah nilai prioritas dari Kriteria dan Subkriteria.
+ - Melihat hasil normalisasi Alternatif.
 
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+3. Pengguna
+ - Melihat hasil normalisasi Alternatif dan rekomendasi Sunscreen berdasarkan jenis kulit yang dipilih pengguna.
